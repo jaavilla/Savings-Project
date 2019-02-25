@@ -1,0 +1,17 @@
+A=int(input("Please enter initial deposit: "))
+r=int(float(input("Please enter annual interest in percent: ")))
+balance=A
+total = 0
+i = 0
+while i <=11:
+	total += i
+	i += 1
+	d=int(input("How much money would you like to deposit? "))
+	w=int(input("How much money would you like to withdrawl? "))
+	newmonthtotal= (balance+(1+((1/12)*(r/100)))+d-w)
+	if w > (A+d) or w<0:
+		print("The amount exceeds your balance!")
+		print("Your new balance at the end of month ",i,"is {:.2f}".format(balance))
+	else:
+		print("Success")
+		print("Your new balance at the end of month ",i,"is {:.2f}".format(newmonthtotal))
